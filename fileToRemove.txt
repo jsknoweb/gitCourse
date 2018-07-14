@@ -1,0 +1,7 @@
+
+First we create the file.
+Git status --> Untracked file 
+
+If the file is untracked as it is now and we delete it, nothing happens because it was untracked
+The new status is clean.
+
