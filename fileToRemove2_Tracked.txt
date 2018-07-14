@@ -1,0 +1,108 @@
+No we have the file tracked,  so it's in the Staging area either because 
+	-	you created new and added to the staging area (point5)
+	-	or because it's part of the latest commit 
+	-	or because it's part of the remote repository you pulled
+
+Now if you remove the file and check the status there's a pending change to add it. It has to be added and  commited. So that the file is removed from the repository.
+
+Exercise1.
+
+1. git status (clean)
+2. echo removingTrackedFileManually > fileToRemove.txt
+3. git status 
+	(unstaged - untracked files : fileToRemove.txt)
+4. git add fileToRemove.txt
+5. git status 
+	(staged - changes to be committed -> new file : fileToRemove.txt)
+6. rm fileToRemove
+7. git status 
+	(staged - changes to be committed -> new file : fileToRemove.txt)
+	(unstaged - changes not staged for commit -> delete : fileToRemove.txt)
+8. git add fileToRemove.txt
+9. git status (clean)
+
+Exercise2.
+
+1. git status (clean)
+2. echo removingTrackedFileManually > fileToRemove.txt
+3. git status 
+	(unstaged - untracked files : fileToRemove.txt)
+4. git add fileToRemove.txt
+5. git status 
+	(staged - changes to commit -> new file : fileToRemove.txt)
+6. git commit -m "adding fileToRemove in the local repository"
+7. git status (clean)
+8. rm fileToRemove.txt
+9. git status 
+	(unstaged - changes not staged for commit -> delete : fileToRemove.txt)
+10. git add fileToRemove.txt
+11. git status
+	(staged - changes to be committed -> delete : fileToRemove.txt)
+12. git commit -m "Deleting the fileToRemove.txt"
+13. git status (clean)
+
+Exercise3.
+
+1. git status (clean)
+2. echo removingTrackedFileThroughGit > fileToRemove.txt
+3. git status 
+	(unstaged - untracked files : fileToRemove.txt)
+4. git add fileToRemove.txt
+5. git status 
+	(staged - changes to be committed -> new file : fileToRemove.txt)
+6. git rm fileToRemove.txt
+	error: the following file has changes staged in the index
+
+Exercise4.
+
+1. git status (clean)
+2. echo removingTrackedFileThroughGit > fileToRemove.txt
+3. git status 
+	(unstaged - untracked files : fileToRemove.txt)
+4. git add fileToRemove.txt
+5. git status 
+	(staged - changes to commit -> new file : fileToRemove.txt)
+6. git commit -m "adding fileToRemove in the local repository"
+7. git status (clean)
+8. git rm fileToRemove.txt
+	remove it from your tracked files (more accurately,	remove it from your staging area) 
+	also removes the file from your working directory so you don’t see it as an untracked file the next time around
+9. git status
+	(staged - changes to be committed -> new file : fileToRemove.txt)
+10. git commit -m "Deleting the fileToRemove.txt"
+11. git status (clean)
+
+Exercise5.
+
+1. git status (clean)
+2. echo removingTrackedFileThroughGit > fileToRemove.txt
+3. git status 
+	(unstaged - untracked files : fileToRemove.txt)
+4. git add fileToRemove.txt
+5. git status 
+	(staged - changes to be committed -> new file : fileToRemove.txt)
+6. git rm fileToRemove.txt
+	error: the following file has changes staged in the index:
+    fileToRemoveForce
+	(use --cached to keep the file, or -f to force removal)
+	Security reasons: git does not want to remove a file that will never recall in its history, never in the repository but in the staging area, so to delete it:
+7. git rm fileToRemove -f
+8. git status (clean)
+
+Exercise6.
+
+1. git status (clean)
+2. echo fromStagingAreaToWorkingDirectory > fileToRemove.txt
+3. git status 
+	(unstaged - untracked files : fileToRemove.txt)
+4. git add fileToRemove.txt
+5. git status 
+	(staged - changes to be committed -> new file : fileToRemove.txt)
+6. git rm fileToRemove.txt
+	error: the following file has changes staged in the index:
+    fileToRemoveForce
+	(use --cached to keep the file, or -f to force removal)
+	Security reasons: git does not want to remove a file that will never recall in its history, never in the repository but in the staging area, so to delete it:
+7. git rm --cached
+8. git status 
+	(unstaged - untracked files : fileToRemove.txt)

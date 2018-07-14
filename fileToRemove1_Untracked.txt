@@ -1,0 +1,28 @@
+
+First we create the file.
+Git status --> Untracked file 
+
+If the file is untracked as it is now and we delete it, nothing happens because it was untracked
+The new status is clean.
+
+In fact we we tried remove with the git command...
+git rm fileToRemove.txt
+fatal: pathspec 'fileToRemove.txt' did not match any files
+
+Becaus git does not recognize the file as tracked.
+
+Exercise1:
+1. Create the file	
+	npp 
+	(echo "testing" > file.txt) 
+2. git status (untracked file)
+3. rm file.txt
+4. git status (clean)
+
+Exercise2:
+1. Create the file	
+	npp 
+	(echo "testing" > file.txt) 
+2. git status (untracked file)
+3. git rm file.txt
+	fatal: pathspec 'fileToRemove.txt' did not match any files	
