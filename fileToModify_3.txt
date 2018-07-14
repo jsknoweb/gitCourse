@@ -1,0 +1,27 @@
+
+Now we have a file already in the repository, modify it, stage it and then want to retrieve
+that modification to keep working with it before we stage it and commit it.
+
+
+Exercise1.
+
+1. git status (clean)
+2. echo fromStagingAreaToWorkingDirectory > fileToRemove.txt
+3. git status 
+	(unstaged - untracked files : fileToRemove.txt)
+4. git add fileToRemove.txt
+5. git status 
+	(staged - changes to be committed -> new file : fileToRemove.txt)
+6. git commit -m "Directly to history"
+7. git status (clean)
+8. npp --> modify the file
+9. git status
+	(staged - 
+6. git rm fileToRemove.txt
+	error: the following file has changes staged in the index:
+    fileToRemoveForce
+	(use --cached to keep the file, or -f to force removal)
+	Security reasons: git does not want to remove a file that will never recall in its history, never in the repository but in the staging area, so to delete it:
+7. git rm --cached
+8. git status 
+	(unstaged - untracked files : fileToRemove.txt)
