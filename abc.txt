@@ -1,1 +1,2 @@
-MOdification in conflict with previous state !!
+MODIFICATION in conflict with previous state !!
+Change added in the master branch directly
