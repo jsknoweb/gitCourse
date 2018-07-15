@@ -21,5 +21,9 @@ Exercise1.
 7. git status
 	(staged - changes to be committed -> modify : fileToModify")
 7. git rm --cached
-8. git status 
+8. git status
+	(staged - changes to be committed -> deleted: fileToModify)
+	(unstaged - untracked : fileToModify)
+9. git reset HEAD abc.txt
+9. git status 
 	(unstaged - changes not staged for commit -> modified: fileToModify)
