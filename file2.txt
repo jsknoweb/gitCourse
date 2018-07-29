@@ -6,6 +6,7 @@
 	
 	<More work added1>
 	<More work added2>
+	More change from myFeature branch too !!
 	<More work added3>
 	
 </Adding a Copy Right>
