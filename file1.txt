@@ -5,7 +5,7 @@ xzcxzc
 zxczxc
 Let's see the stash example !!!
 Master again
-asffasfasf
-fasfasf
+
+Remove bad text
 
 More changes
